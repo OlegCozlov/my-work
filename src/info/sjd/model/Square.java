@@ -1,11 +1,27 @@
 package info.sjd.model;
 
-public class Square {
+import java.io.Serializable;
+public class Square extends AbstractShape implements Shape, Serializable {
 
-    public double side;
+    private double side;
 
     public double getSide() {
-        double area = side*side;
-        return area;
+        return side;
+    }
+
+    public void setSide(double side) {
+        this.side = side;
+    }
+
+    public Square(double side) {
+        this.side = side;
+    }
+
+    public Square() {
+    }
+
+    @Override
+    public double getArea() {
+        return side*side;
     }
 }
